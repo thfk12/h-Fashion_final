@@ -1,0 +1,78 @@
+@use "../../App.scss" as g;
+
+.swiper {
+  margin-left: unset;
+}
+
+.detail-sub-goods-list {
+  max-width: 1240px;
+  min-width: 580px;
+  width: -webkit-fill-available;
+  a {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .img-box {
+    aspect-ratio: 2/3;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .text-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: g.$main-color1;
+
+    .brand {
+      font-size: 1.2rem;
+      color: g.$sub-color2;
+      font-weight: 300;
+    }
+
+    .sale-price {
+      color: g.$main-color1;
+      font-size: 1.8rem;
+    }
+    .title {
+      strong {
+        line-height: 1.4;
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: g.$main-color1;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+    }
+
+    span {
+      &:has(+ del) {
+        margin-right: 12px;
+      }
+    }
+
+    del {
+      font-size: 1.4rem;
+      color: g.$sub-color2;
+    }
+
+    .price {
+      @include g.myFlex();
+
+      .sale {
+        color: g.$percent-color;
+        font-size: 1.4rem;
+        font-weight: 400;
+      }
+    }
+  }
+}

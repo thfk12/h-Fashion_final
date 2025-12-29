@@ -1,0 +1,20 @@
+.no-member-wrap {
+  width: 100%;
+  .noMember-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    input {
+      height: 60px;
+      width: 100%;
+    }
+    button {
+      margin-top: 10px;
+      height: 44px;
+    }
+    P {
+      color: rgba($color: #000000, $alpha: 0.3);
+      font-size: 1.4rem;
+    }
+  }
+}

@@ -1,0 +1,166 @@
+@use '../../App.scss' as g;
+
+.magazine {
+  .magazine-wrap {
+    background-color: #fcebeb;
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    height: 850px;
+  }
+
+  .magazine-left {
+    flex: 5;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    .magazine-main-img {
+      flex: 3;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .magazine-side-imgs {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .magazine-side-img-top {
+        flex-basis: 0;
+
+        img {
+          width: 100%;
+          height: 350px;
+          object-fit: cover;
+        }
+      }
+
+      .magazine-side-img-bottom {
+        img {
+          width: 100%;
+          height: 480px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .magazine-right {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    position: relative;
+
+    .magazine-title {
+      font-size: 7.2rem;
+      font-family: 'Times New Roman';
+      font-style: italic;
+      align-self: flex-start;
+      padding: 40px 0;
+      margin-left: 10px;
+    }
+
+    .magazine-product-list {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      overflow: hidden;
+
+      .product-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+
+        position: relative;
+        width: 100%;
+        max-width: 240px;
+
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+          background-color: g.$main-color2;
+          transition: transform 0.3s ease;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          z-index: 2;
+          pointer-events: none;
+        }
+
+        .product-name {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) translateY(10px);
+          opacity: 0;
+          z-index: 3;
+          color: g.$main-color2;
+          white-space: nowrap;
+          pointer-events: none;
+          transition: opacity 0.3s ease, transform 0.3s ease;
+          text-align: center;
+        }
+
+        &:hover {
+          &::after {
+            opacity: 1;
+          }
+
+          img {
+            transform: scale(1.03);
+          }
+
+          .product-name {
+            opacity: 1;
+            transform: translate(-50%, -50%) translateY(0);
+          }
+        }
+      }
+    }
+
+    .magazine-desc {
+      color: g.$main-color1;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 750px;
+
+      .magazine-desc-left {
+        line-height: 1.4;
+        text-align: left;
+        margin-top: 50px;
+        align-self: flex-start;
+        padding-left: 10px;
+      }
+
+      .magazine-desc-right {
+        font-size: 3rem;
+        font-family: 'Times New Roman';
+        font-weight: 300;
+        text-align: right;
+        align-self: flex-end;
+        line-height: 1.2;
+      }
+    }
+  }
+}

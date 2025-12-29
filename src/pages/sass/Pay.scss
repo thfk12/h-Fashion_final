@@ -1,0 +1,274 @@
+@use "../../App.scss" as g;
+
+.sub-page {
+
+  .inner {
+
+    &.pay {
+      font-size: 1.6rem;
+      padding: 4rem 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .pay-inner-top {
+
+        h2 {
+          font-size: 4rem;
+          font-weight: 500;
+        }
+
+      }
+
+      .pay-inner-bottom {
+        display: flex;
+        justify-content: space-between;
+
+        .pay-inner-left {
+          // border: 1px solid g.$sub-color2;
+          width: 70%;
+          // padding: 2.4rem 4rem;
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+
+          .user-info-wrap {
+            border: 1px solid g.$sub-color2;
+
+            .user-info {
+              // background: g.$sub-color1;
+              display: flex;
+              align-items: center;
+              padding: 2rem 4rem;
+              gap: 4rem;
+
+              input {
+                flex: 1;
+              }
+
+              >span {
+                min-width: 90px;
+                color: g.$sub-color3;
+              }
+            }
+          }
+
+          .address-wrap {
+            border: 1px solid g.$sub-color2;
+            padding: 3rem 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            .address-top {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              span {
+                font-size: 2rem;
+                font-weight: 500;
+                color: g.$sub-color3;
+              }
+
+              .address-btn {
+                display: flex;
+                gap: 1rem;
+              }
+            }
+
+            .address-bottom {
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+
+              .address-input {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex: 1;
+
+                input {
+                  flex: 1;
+                }
+
+                span {
+                  color: g.$sub-color3;
+
+                  min-width: 120px;
+                }
+
+                &.delivery {
+                  align-items: flex-start;
+
+                  button {
+                    width: 76px;
+                  }
+
+                  >span {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    padding-top: 5px;
+                  }
+
+                  >div {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                    gap: 8px;
+                  }
+                }
+              }
+            }
+          }
+
+          .item-wrap {
+            border: 1px solid g.$sub-color2;
+            padding: 3rem 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+          }
+
+          .coupon-wrap {
+            border: 1px solid g.$sub-color2;
+            padding: 3rem 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+          }
+
+          .payment-wrap {
+            border: 1px solid g.$sub-color2;
+            padding: 3rem 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            .payment-top {
+              font-size: 2rem;
+              font-weight: 500;
+              color: g.$sub-color3;
+            }
+
+            .payment-bottom {
+
+              display: flex;
+              flex-direction: column;
+              gap: 1.5rem;
+
+              .pay-method-btns {
+                display: flex;
+                justify-content: space-between;
+                gap: 3rem;
+
+                button {
+                  font-size: 1.4rem;
+                  font-weight: 400;
+                  color: g.$main-color1;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border: 1px solid g.$sub-color2;
+                  background-color: g.$main-color2;
+                  padding: 1rem 0;
+                  width: 100%;
+
+                  &.active {
+                    background: g.$main-color1;
+                    color: g.$main-color2;
+                  }
+                }
+              }
+
+              .pay-method-depth {
+                display: flex;
+                justify-content: space-between;
+                gap: 3rem;
+
+                .depth-item {
+                  width: 100%;
+
+                  .input-wrapper {
+
+                    input {
+                      width: 100%;
+                    }
+                  }
+
+                  .dropdown-list {
+                    cursor: pointer;
+                  }
+
+                  // &.card{
+                  //   width: 100%;
+                  // }
+
+                  .dropdown-btn {
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                    color: g.$main-color1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border: 1px solid g.$sub-color2;
+                    background-color: g.$main-color2;
+                    padding: 1rem 2rem;
+                    width: 100%;
+                    // transition: 0.8s ease;
+
+                    &.active {
+                      // background: #444;
+                    }
+
+                    .button-icon {
+                      width: 1.6rem;
+                    }
+                  }
+
+                  ul {
+                    padding: 1rem 2rem;
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                    color: g.$main-color1;
+                    border: 1px solid g.$sub-color2;
+                    border-top: none;
+
+                    &.active {
+                      transition: 0.2s ease;
+                    }
+
+                    li {
+                      line-height: 4rem;
+                    }
+                  }
+                }
+
+                .radio-pay-item {
+
+                  .radio-label {
+                    display: flex;
+                    align-content: center;
+                    gap: 1rem;
+
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .pay-inner-right {
+          border: 1px solid g.$sub-color2;
+          width: 25%;
+          height: 30%;
+          padding: 4rem;
+          position: sticky;
+          top: 120px;
+
+        }
+      }
+    }
+  }
+}

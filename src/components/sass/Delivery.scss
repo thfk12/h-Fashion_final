@@ -1,0 +1,33 @@
+@use '../../App.scss' as g;
+
+.delivery-content {
+    font-size: 1.4rem;
+    line-height: 1.6;
+
+    .delivery-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .delivery-item {
+        @include g.myFlex($gap: 0, $jc: flex-start, $ai: flex-start);
+
+        h4 {
+            width: 160px;
+            color: g.$sub-color3;
+            font-weight: 400;
+        }
+
+        ul {
+            flex: 1;
+            color: g.$sub-color2;
+            font-weight: 300;
+            span{
+                display: block;
+                padding-left: 10px;
+            }
+        }
+
+    }
+}

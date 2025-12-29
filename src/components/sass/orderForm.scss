@@ -1,0 +1,61 @@
+.total-amount-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 450px;
+  border: 1px solid #bababa;
+  padding: 65px 40px;
+  .total-amount-top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    h3 {
+      padding: 0 20px;
+      font-size: 20px;
+      font-weight: 400;
+    }
+    .amount-wrap {
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      p {
+        display: flex;
+        justify-content: space-between;
+        span {
+          font-size: 16px;
+          font-weight: 400;
+        }
+        .delivery-fee {
+          color: #838383;
+          font-weight: 600;
+        }
+      }
+    }
+    .total-price {
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      .total-price-r {
+        display: flex;
+        gap: 6px;
+        .discount-per {
+          color: #838383;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .total-amount-bottom {
+    height: 60px;
+    width: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    button {
+      font-size: 20px;
+      font-weight: 400;
+      color: white;
+    }
+  }
+}

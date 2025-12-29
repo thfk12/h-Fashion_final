@@ -1,0 +1,166 @@
+@use '../../App.scss' as g;
+
+.sub-page {
+  .join-inner {
+    max-width: 650px;
+    margin: 40px auto 0;
+
+    // background: red;
+    .join-wrap {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid rgb(26, 24, 24);
+      margin-bottom: 40px;
+
+      h2 {
+        color: black;
+        font-size: 40px;
+        font-weight: 500;
+        padding-bottom: 16px;
+        // margin-bottom: 66px;
+        text-align: center;
+      }
+
+      > p {
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 16px;
+      }
+    }
+
+    .join-form {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+
+      label {
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        font-weight: 400;
+        align-items: center;
+
+        &:nth-of-type(7) {
+          margin-bottom: 16px;
+          align-items: self-start;
+
+          > span {
+            &:first-child {
+              padding-top: 8px;
+            }
+          }
+        }
+
+        .label-tag {
+          width: 120px;
+        }
+
+        .id-input-tag {
+          display: flex;
+          gap: 4px;
+          justify-content: space-between;
+          width: 100%;
+          input {
+            flex: 1;
+          }
+        }
+
+        input {
+          height: 40px;
+          width: 100%;
+        }
+
+        .pass-input-tag {
+          display: flex;
+          gap: 10px;
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .address-input-tag {
+          display: flex;
+          gap: 6px;
+          flex-direction: column;
+          width: 100%;
+
+          .address-input-tag-top {
+            display: flex;
+            gap: 4px;
+          }
+        }
+      }
+      .join-policy-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        // justify-content: space-between;
+        .join-all-agree-wrap {
+          width: 100%;
+          // background-color: red;
+          display: flex;
+          justify-content: end;
+          gap: 8px;
+          input {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+          }
+          span {
+            font-size: 12px;
+          }
+        }
+        .privacy-agree,
+        .service-agree {
+          width: 100%;
+          // background: red;
+          // padding: 0px 10px 10px 10px;
+          label {
+            font-size: 12px;
+            padding: 4px;
+            background: #f2f2f2;
+            display: flex;
+            gap: 8px;
+            flex-direction: row-reverse;
+            justify-content: start;
+            input {
+              display: inline-block;
+              width: 12px;
+              height: 12px;
+            }
+          }
+          p {
+            border: 1px solid #bababa;
+            padding: 12px;
+            // margin-top: 10px;
+            height: 80px;
+            overflow-y: scroll;
+          }
+
+          span {
+            font-size: 12px;
+            color: #bababa;
+            background: white;
+          }
+        }
+      }
+      .join-button-wrap {
+        border-top: 1px solid black;
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        justify-content: center;
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.postcode-overlay {
+  @include g.postBackStyle();
+}
+.postcode-modal {
+  @include g.postStyle();
+}

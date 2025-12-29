@@ -1,0 +1,71 @@
+@use '../../App.scss' as g;
+
+p.best-review {
+    color: g.$sub-color3;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+dl.best-review {
+    display: flex;
+    align-items: center;
+    dt {
+        color: g.$main-color1;
+        font-size: 14px;
+        font-weight: 400;
+        &:nth-of-type(3){
+            color: g.$sub-color3;
+        }
+        &:nth-of-type(4),&:nth-of-type(5){
+            color: g.$sub-color2;
+        }
+    }
+
+    dd {
+        padding: 0 12px;
+        color: g.$sub-color3;
+        font-size: 14px;
+        font-weight: 400;
+        &:has(+ dt){
+            margin-right: 40px;
+        }
+        &:nth-of-type(4),&:nth-of-type(5){
+            color: g.$sub-color2;
+        }
+    }
+}
+
+.tab-ver1 {
+    @include g.myFlex($gap: 0);
+    position: sticky;
+    top: 82px;
+    background-color: g.$main-color2;
+    z-index: 100;
+
+    li {
+        flex: 1;
+        line-height: 50px;
+        border: 1px solid g.$main-color2;
+        border-bottom-color: g.$sub-color3;
+        text-align: center;
+
+        a {
+            display: block;
+            line-height: 50px;
+            font-size: 1.6rem;
+            color: g.$sub-color2;
+            
+        }
+
+        &.active {
+            border: 1px solid g.$main-color1;
+            border-bottom-color: g.$main-color2;
+
+            a {
+                color: g.$main-color1;
+            }
+        }
+
+
+    }
+}

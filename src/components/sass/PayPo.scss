@@ -1,0 +1,78 @@
+@use "../../App.scss" as g;
+
+.payPo-wrap {
+  margin: 0 auto;
+  // border: 1px solid black;
+
+  .payPo-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2.5rem;
+
+    .payPo-inner-top {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2.5rem;
+
+      p {
+        color: g.$main-color1;
+        font-size: 2rem;
+        font-weight: 400;
+      }
+
+      .payPo-pay-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .payPo-pay {
+          display: flex;
+          justify-content: space-between;
+          font-size: 1.6rem;
+          font-weight: 400;
+
+          &.dis {
+            color: g.$percent-color;
+          }
+
+          &.del {
+            color: g.$sub-color3;
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+
+    .payPo-inner-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+
+      .payPo-pay-total {
+        font-size: 1.6rem;
+        font-weight: 500;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .payPo-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+          display: block;
+          padding: 2rem;
+          width: 100%;  
+          background-color: g.$main-color1;
+          color: g.$main-color2;
+          font-size: 2rem;
+          font-weight: 400;
+        }
+
+      }
+    }
+  }
+}

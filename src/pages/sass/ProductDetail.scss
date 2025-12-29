@@ -1,0 +1,107 @@
+@use '../../App.scss' as g;
+
+.product-detail-wrap {
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 1720px;
+
+  @include g.myFlex($gap: 2rem, $ai: flex-start);
+
+  h3 {
+    margin-bottom: 40px;
+    color: g.$main-color1;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .detail-left {
+    margin-top: 4rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1240px;
+    min-width: 580px;
+
+    .product-detail-slide {
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .product-notice-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      > li {
+        @include g.myFlex($gap: 0);
+        display: flex;
+        font-size: 1.4rem;
+
+        strong {
+          color: g.$sub-color3;
+          width: 180px;
+        }
+
+        span {
+          color: g.$sub-color2;
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  .detail-right {
+    position: sticky;
+    top: 120px;
+    min-width: 380px;
+    width: 380px;
+  }
+}
+
+.back-overlay {
+  @include g.postBackStyle();
+}
+.overlay-text-wrap {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  // height: 300px;
+  width: 500px;
+  background: #fff;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  padding: 80px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  .over-title {
+    align-items: start;
+    font-size: 28px;
+    font-weight: 500;
+    color: #2c2c2c;
+  }
+  .over-middle {
+    font-size: 14px;
+    color: #545454;
+  }
+  .over-box {
+    width: 0;
+    height: 20px;
+    background: #eebe81;
+    transform: none;
+    animation: widthMax 0.5s linear;
+  }
+}
+
+@keyframes widthMax {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

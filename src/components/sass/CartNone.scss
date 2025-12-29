@@ -1,0 +1,16 @@
+@use "../../App.scss" as g;
+
+.cart-item-none-wrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+
+  font-size: 1.6rem;
+  color: g.$sub-color3;
+  height: 100%;
+  .cart-none-icon{
+    width: 8%;
+  }
+}

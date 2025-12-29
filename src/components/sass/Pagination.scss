@@ -1,0 +1,28 @@
+@use '../../App.scss' as g;
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    line-height: 30px;
+
+    .page-numbers {
+        @include g.myFlex($gap: 4px);
+
+        button {
+            width: 30px;
+            height: 30px;
+
+            &.active {
+                color: g.$main-color2;
+                background-color: g.$main-color1;
+            }
+        }
+    }
+
+    button {
+        &:disabled {
+            cursor: default;
+        }
+    }
+}

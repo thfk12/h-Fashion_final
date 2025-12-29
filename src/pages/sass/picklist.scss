@@ -1,0 +1,122 @@
+@use '../../App.scss' as g;
+
+.content-inner-picklist {
+  display: flex;
+  justify-content: space-between;
+  padding: 5rem 2rem;
+
+  .user-info-left {
+    width: 15%;
+  }
+
+  .user-pick-wrap {
+    width: 80%;
+    border: 1px solid g.$sub-color2;
+    padding: 5rem 3rem;
+
+    .user-info-right-inner {
+
+      .user-info-right-title {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+
+        h3 {
+          color: g.$main-color1;
+          text-align: center;
+          font-size: 3.2rem;
+          font-weight: 400;
+        }
+
+        >p {
+          font-size: 1.4rem;
+          color: g.$sub-color3;
+        }
+      }
+
+      .user-picklist-card-wrap {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6rem 2rem;
+
+        .user-picklist-card {
+
+          li {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          }
+
+          cursor: pointer;
+        }
+
+        .user-picklist-card-text {
+          margin-top: 12px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          .card-text1 {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .picklist-brand {
+              font-size: 1.2rem;
+              color: g.$sub-color2;
+            }
+
+            .picklist-heart {
+              width: 20px;
+              height: 20px;
+              background: url('../../../public/images/icon/icon-heart-black.svg') center no-repeat;
+              background-size: contain;
+            }
+          }
+
+          .picklist-name {
+            line-height: 1.4;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: g.$main-color1;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+          }
+
+          .card-text3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            >div {
+              display: flex;
+              gap: 8px;
+              align-items: end;
+
+              .picklist-price {
+                color: g.$main-color1;
+                font-size: 2rem;
+              }
+
+              .picklist-originPrice {
+                font-size: 1.4rem;
+                color: g.$sub-color2;
+                text-decoration: line-through;
+              }
+            }
+
+            .picklist-sale {
+              font-size: 1.6rem;
+              color: g.$percent-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

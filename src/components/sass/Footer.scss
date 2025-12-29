@@ -1,0 +1,88 @@
+@use "../../App.scss" as g;
+
+footer {
+    padding: 80px 100px;
+    background: #000;
+margin-top: 120px;
+    .inner {
+        width: 100%;
+        // border: 1px solid white;
+        display: flex;
+        justify-content: space-between;
+
+        .footer-inner-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10rem;
+
+            .footer-address {
+                display: flex;
+                flex-direction: column;
+                gap: 45px;
+                color: #C2C2C2;
+                align-items: flex-start;
+                font-size: 1.3rem;
+
+                .address-top {
+                    gap: 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    .address-top1 {
+                        address {
+                            font-style: normal;
+                            display: flex;
+                            gap: 15px;
+
+                        }
+                    }
+
+                    .address-top2 {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 10px;
+                    }
+                }
+            }
+        }
+
+        .footer-inner-right {
+            display: flex;
+            flex-direction: column;
+
+            .footer-inner-right-top {
+                display: flex;
+                flex-direction: column;
+                gap: 2.5rem;
+                align-items: flex-end;
+
+                .sns-list {
+
+                    ul {
+                        display: flex;
+                        gap: 1.2rem;
+                    }
+                }
+
+                .footer-login {
+
+                    button {
+                        background: none;
+                        border: 1px solid #C2C2C2;
+                        border-radius: 2px;
+                        padding: 0.3rem 1.4rem;
+
+                        >a {
+                            color: #C2C2C2;
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

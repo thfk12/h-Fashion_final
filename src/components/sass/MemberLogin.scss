@@ -1,0 +1,74 @@
+.login-wrap {
+  width: 100%;
+
+  .input-wrap {
+    input {
+      display: flex;
+      gap: 10px;
+      height: 60px;
+      width: 100%;
+
+      &:first-of-type {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .idTag {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 2rem;
+    color: #bababa;
+    font-size: 1.4rem;
+    font-weight: 400;
+
+    .rememberId {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+
+      input {
+        width: 16px;
+        height: 16px;
+      }
+
+      &:has(input:checked) {
+        color: #000;
+      }
+    }
+
+    .findIdPw {
+      display: flex;
+      gap: 6px;
+
+      .findPw::before {
+        content: "|";
+        margin-right: 6px;
+      }
+    }
+  }
+
+  .button-grid-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+
+    button {
+      height: 44px;
+      &:first-of-type {
+        grid-column: 1/3;
+      }
+    }
+  }
+  .button-grid-wrap-half {
+    button,
+    a {
+      height: 44px;
+    }
+    margin-top: -24px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+  }
+}

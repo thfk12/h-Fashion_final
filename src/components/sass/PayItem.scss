@@ -1,0 +1,102 @@
+@use "../../App.scss" as g;
+
+.pay-item-list-wrap {
+
+  .pay-item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    .pay-item {
+      margin: 2rem 0;
+
+      .pay-item-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .item-left {
+          display: flex;
+          gap: 5rem;
+          // justify-content: flex-start;
+          align-items: center;
+          width: 60%;
+
+          .item-img-box {
+            width: 30%;
+            height: 30%;
+            overflow: hidden;
+            // border: 1px solid black;
+
+
+            img {
+              align-items: center;
+            }
+          }
+
+          .item-text-box {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            .text-box-top {
+              display: flex;
+              flex-direction: column;
+              gap: 5px;
+
+              .item-brand {
+                font-size: 1.4rem;
+                font-weight: 300;
+                color: g.$sub-color4;
+              }
+
+              .item-title {
+                font-size: 1.6rem;
+                font-weight: 500;
+                color: g.$sub-color5;
+              }
+            }
+
+            .text-box-bottom {
+              font-size: 1.4rem;
+              font-weight: 400;
+              color: g.$sub-color5;
+            }
+          }
+        }
+
+        .item-right {
+          display: flex;
+          justify-content: space-between;
+          gap: 4rem;
+          align-items: center;
+          // border: 1px solid black;
+
+          .item-count {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: g.$main-color1;
+          }
+
+          .item-price{
+            display: flex;
+            align-items: center;
+            gap: 3px;
+
+            .price{
+              font-size: 2rem;
+              font-weight: 400;
+              color: g.$main-color1;
+            }
+
+            span{
+              font-size: 1.6rem;
+              font-weight: 400;
+              color: g.$sub-color4;
+            }
+          }
+        }
+      }
+    }
+  }
+}

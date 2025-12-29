@@ -1,0 +1,31 @@
+@use '../../App.scss' as g;
+
+.img-box{
+    position: relative;
+    >.favorite{
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        width: 28px;
+        height: 28px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 28px;
+        background-image: url('../../../public/images/icon/icon-heart-grey.svg');
+        &.active{
+            background-image: url('../../../public/images/icon/icon-heart-black.svg');
+        }
+    }
+    >.best-rank{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 28px;
+        height: 28px;
+        font-size: 1.6rem;
+        line-height: 28px;
+        text-align: center;
+        background-color: g.$main-color1;
+        color: g.$main-color2;
+    }
+}

@@ -1,0 +1,198 @@
+@use "../../App.scss" as g;
+
+.content-inner {
+  &.delivery {
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem 2rem;
+
+    .memberDelivery-inner-left {
+      width: 15%;
+    }
+
+    .memberDelivery-inner-right {
+      width: 80%;
+      border: 1px solid g.$sub-color2;
+      padding: 5rem 3rem;
+      display: flex;
+      font-size: 1.6rem;
+
+      .member-delivery-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+
+        .member-delivery-inner-top {
+          font-size: 2.6rem;
+          font-weight: 500;
+          display: flex;
+          align-items: flex-start;
+          width: 100%;
+        }
+
+        .member-delivery-none {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          gap: 2rem;
+          padding: 8rem 0;
+
+          span {
+            font-size: 1.4rem;
+          }
+
+          a {
+            font-size: 1.6rem;
+            color: g.$sub-color4;
+          }
+        }
+
+        .member-delivery-item-wrap {
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+
+          .member-delivery-status {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            gap: 1.8rem;
+            justify-content: center;
+
+            .member-delivery-box-wrap {
+              .member-delivery-box-list {
+                display: flex;
+                justify-content: space-between;
+
+                .member-delivery-box {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 1.4rem;
+                  font-size: 1.4rem;
+
+                  .del-icon-wrap {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: g.$sub-color1;
+                    width: 6rem;
+                    height: 6rem;
+                    border-radius: 50%;
+
+                    .del-icon1 {
+                      display: block;
+                      width: 3rem;
+                      height: 3rem;
+                      background-position: center;
+                      background-repeat: no-repeat;
+                      background-image: url("../../../public/images/del-icon1.svg");
+                    }
+
+                    .del-icon2 {
+                      display: block;
+                      width: 3rem;
+                      height: 3rem;
+                      background-position: center;
+                      background-repeat: no-repeat;
+                      background-image: url("../../../public/images/del-icon2.svg");
+                    }
+
+                    .del-icon3 {
+                      display: block;
+                      width: 3rem;
+                      height: 3rem;
+                      background-position: center;
+                      background-repeat: no-repeat;
+                      background-image: url("../../../public/images/del-icon3.svg");
+                    }
+
+                    .del-icon4 {
+                      display: block;
+                      width: 3rem;
+                      height: 3rem;
+                      background-position: center;
+                      background-repeat: no-repeat;
+                      background-image: url("../../../public/images/del-icon4.svg");
+                    }
+                  }
+                }
+              }
+            }
+
+            .member-delivery-text {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1.6rem;
+              font-weight: 400;
+            }
+          }
+
+          .member-del-item-list {
+            // display: flex;
+            // flex-direction: column;
+            // gap: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+
+            .member-del-item {
+              border: 1px solid g.$sub-color2;
+              border-radius: 2px;
+              padding: 2rem;
+
+              .member-del-item-inner {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+
+                .del-item-inner-top {
+                  display: flex;
+                  justify-content: space-between;
+
+                  .del-inner-top-left {
+                    display: flex;
+                    gap: 1.5rem;
+                  }
+                }
+
+                .del-item-inner-bottom {
+                  display: flex;
+                  justify-content: flex-start;
+                  gap: 3rem;
+
+                  .del-inner-bottom-img-box {
+                    width: 100px;
+                  }
+
+                  .del-inner-bottom-text-box {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3rem;
+                    padding: 2rem 0;
+
+                    .item-title {
+                      font-size: 1.4rem;
+                    }
+
+                    .del-item-price {
+                      .item-price {
+                        font-weight: 500;
+                        font-size: 1.6rem;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

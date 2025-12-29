@@ -1,0 +1,120 @@
+@use '../../App.scss' as g;
+
+.pay-result-popup-wrap {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  font-size: 1.6rem;
+  line-height: 1.6;
+
+  .pay-result-popup {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: g.$main-color2;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    border-radius: 2px;
+
+    .pay-result-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        font-size: 2rem;
+        font-weight: 500;
+      }
+
+      span {
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: g.$sub-color4;
+      }
+    }
+
+    .pay-result-bottom-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .pay-result-bottom {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid g.$sub-color2;
+        border-radius: 2px;
+        padding: 2rem;
+        // align-items: center;
+        gap: 4rem;
+
+        .pay-result-bottom1-wrap {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          .pay-result-bottom1 {
+            display: flex;
+            justify-content: space-between;
+            gap: 3rem;
+
+            &.item {
+              gap: 3rem;
+            }
+          }
+        }
+
+        .pay-result-bottom2-wrap {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          .pay-result-bottom2 {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+      }
+
+      .pay-result-btn {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+
+        a {
+          display: block;
+          padding: 1rem 1.5rem;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+
+          &.pay-detail {
+            background-color: g.$percent-color;
+
+            button {
+              width: 100%;
+            }
+          }
+
+          &.to-main {
+            background-color: g.$main-color1;
+
+            button {
+              color: g.$main-color2;
+              width: 100%;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

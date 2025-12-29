@@ -1,0 +1,155 @@
+@use "../../App.scss" as g;
+
+.categorynew-tabs {
+  display: flex;
+  justify-content: flex-start;
+  gap: 24px;
+  margin-bottom: 36px;
+  padding: 0 64px;
+
+  button {
+    padding: 4px 0;
+    cursor: pointer;
+    color: g.$main-color1;
+    font-family: "Times New Roman";
+    font-size: 1.6rem;
+
+    &.active {
+      font-weight: bold;
+    }
+  }
+
+  .categorynew-tab-all {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    gap: 6px;
+
+    img {
+      max-width: 14px;
+      height: auto;
+    }
+  }
+}
+
+.categorynew-slider-wrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+}
+
+.arrow-btn {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.categorynew-product-list {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+
+  .product-card {
+    position: relative;
+    flex: 0 0 calc((100% - 30px) / 4);
+    cursor: pointer;
+
+    .categorynew-likebtn {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      z-index: 3;
+
+      width: 30px;
+      height: 30px;
+
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .categorynew-product-img {
+      position: relative;
+      width: 100%;
+      padding-top: 140%;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+    }
+
+    .categorynew-overlay-info {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: start;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+      .categorynew-name {
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 20px;
+        color: g.$main-color2;
+        max-width: 90%;
+        white-space: normal;
+        word-break: keep-all;
+      }
+
+      .categorynew-price {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;
+
+        .categorynew-sale-price {
+          font-size: 1.8rem;
+          color: g.$main-color2;
+        }
+
+        .categorynew-original-price {
+          font-size: 1.6rem;
+          color: g.$sub-color2;
+        }
+
+        .categorynew-discount {
+          font-size: 1.6rem;
+          color: g.$percent-color;
+        }
+      }
+    }
+
+    &:hover {
+      .categorynew-product-img {
+        img {
+          transform: scale(1.05);
+        }
+
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      .categorynew-overlay-info,
+      .categorynew-likebtn {
+        opacity: 1;
+      }
+    }
+  }
+}

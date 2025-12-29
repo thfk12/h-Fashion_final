@@ -1,0 +1,113 @@
+@use "../../App.scss" as g;
+
+.buy-product-wrap {
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+
+  .send-product-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    > div {
+      &:nth-of-type(1) {
+        width: 240px;
+      }
+      &:nth-of-type(2) {
+        flex: 1;
+      }
+      &:nth-of-type(3) {
+        min-width: 160px;
+        text-align: right;
+      }
+    }
+
+    .gap-box {
+      font-size: 40px;
+      color: g.$sub-color1;
+    }
+
+    .date-code-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+
+      .date {
+        color: #838383;
+        font-size: 14px;
+      }
+      .code {
+        font-size: 16px;
+        font-weight: 700;
+        color: #000;
+      }
+    }
+    .brand-name-box {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 20px 30px;
+      gap: 10px;
+
+      .img-box {
+        height: 80px;
+        width: 80px;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+      .product-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 10px;
+
+        .brand-name {
+          font-size: 14px;
+          font-family: "Times New Roman", Times, serif;
+          color: #838383;
+        }
+        .product-name {
+          font-size: 16px;
+          color: #000;
+        }
+        button {
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          color: #bababa;
+
+          &::after {
+            content: "";
+            background-image: url("../../../public/images/arrow-right-thin.svg");
+            margin: 2px;
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            background-size: contain;
+          }
+        }
+      }
+    }
+    .product-price-box {
+      padding: 0 30px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+
+      .product-price {
+        font-size: 16px;
+        font-weight: 700;
+      }
+      .unit {
+        font-size: 14px;
+        color: #828282;
+      }
+    }
+  }
+}

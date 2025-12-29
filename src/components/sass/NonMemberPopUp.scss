@@ -1,0 +1,200 @@
+@use "../../App.scss" as g;
+.non-popup-wrap {
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.6);
+
+  .non-popup-inner {
+    position: absolute;
+    display: flex;
+    gap: 40px;
+    left: 50%;
+    padding: 20px 40px;
+    top: 50%;
+    width: 720px;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    font-size: 1.6rem;
+    background: white;
+
+    .non-popup-title {
+      display: flex;
+      justify-content: space-between;
+
+      .non-popup-title-l {
+        @include g.myFlex();
+
+        h2 {
+          font-size: 20px;
+        }
+
+        p {
+          margin-top: 4px;
+          font-size: 16px;
+          color: #838383;
+        }
+      }
+
+      p {
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    .non-popup-delivery {
+      display: flex;
+      justify-content: space-between;
+
+      .delivery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+        .delivery-box {
+          border-radius: 12px;
+          .icon-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: g.$sub-color1;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            .icon {
+              display: block;
+              width: 3rem;
+              height: 3rem;
+              background-position: center;
+              background-repeat: no-repeat;
+            }
+          }
+        }
+        .delivery1-box {
+          .icon {
+            background-image: url("../../../public/images/del-icon1.svg");
+          }
+        }
+        .delivery2-box {
+          .icon {
+            background-image: url("../../../public/images/del-icon2.svg");
+          }
+        }
+        .delivery3-box {
+          .icon {
+            background-image: url("../../../public/images/del-icon3.svg");
+          }
+        }
+        .delivery4-box {
+          .icon {
+            background-image: url("../../../public/images/del-icon4.svg");
+          }
+        }
+      }
+    }
+
+    .non-popup-item-wrap {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      padding-right: 12px;
+      max-height: 380px;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+      &::-webkit-scrollbar-button {
+        display: none;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: g.$sub-color2;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: g.$sub-color1;
+      }
+      .non-popup-item {
+        display: flex;
+        flex-direction: column;
+        padding: 12px 0;
+        border-bottom: 1px dashed #eee;
+        &:last-of-type {
+          border-bottom: none;
+        }
+
+        .non-popup-item-t {
+          display: flex;
+          justify-content: space-between;
+
+          .order-code {
+            font-size: 14px;
+            color: g.$sub-color3;
+          }
+
+          .order-status {
+            padding: 4px 8px;
+            font-size: 14px;
+            color: g.$main-color1;
+            border: 1px solid g.$main-color1;
+          }
+        }
+
+        .non-popup-item-b {
+          display: flex;
+          gap: 16px;
+          justify-content: space-between;
+          align-items: center;
+
+          .non-popup-item-b-r {
+            width: 80px;
+            height: 80px;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .non-popup-item-b-l {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1;
+            .popup-item-brand {
+              color: g.$sub-color2;
+              font-size: 12px;
+            }
+            .popup-item-title {
+              display: -webkit-box;
+              width: 100%;
+              line-height: 1.2;
+              text-overflow: ellipsis;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2;
+              overflow: hidden;
+            }
+
+            .popup-item-color {
+              @include g.myFlex($gap: 20px, $jc: flex-start);
+              font-size: 14px;
+              color: #838383;
+            }
+          }
+          .popup-item-price {
+            text-align: right;
+            width: 120px;
+            font-size: 16px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}

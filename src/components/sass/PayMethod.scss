@@ -1,0 +1,46 @@
+@use "../../App.scss" as g;
+
+.pay-method-wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+
+  .pay-method {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+
+    .method1 {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 2.5rem;
+      border: 1px solid g.$sub-color2;
+      
+
+      span{
+        font-size: 1.4rem;
+        font-weight: 400;
+      }
+      img{
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+
+    .methodDepth1{
+      display: none;
+      padding: 1.5rem 2.5rem;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: g.$main-color1;
+      border: 1px solid g.$sub-color2;
+      border-top: none;
+
+      li{
+        line-height: 4rem;
+      }
+
+    }
+  }
+}

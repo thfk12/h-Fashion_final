@@ -1,0 +1,122 @@
+.container{
+  .review-box-list{
+    height: 100%;
+    
+    .review-box{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 66px;
+    }
+  }
+}
+
+@media (max-width: 1500px){
+  .container{
+    .review-box-list{
+      
+      .review-box{
+        grid-template-columns: repeat(2,1fr);
+
+        .red-card:last-of-type{
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px){
+  .container{
+    .review-box-list{
+    
+      .review-box{
+
+        .red-card{
+          .review-card{
+            .review-item-box{
+              padding:20px 0;
+
+              .item-top{
+                gap:8px;
+
+                .brand-name{
+                  font-size: 14px;
+                }
+                .review-text{
+                  max-width: 200px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  font-size: 14px;
+                }
+              }
+              .item-bottom{
+                .product-name{
+                  max-width: 200px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  font-size: 14px;
+                }
+                .rating-box{
+                  gap: 8px;
+
+                  span{
+                    font-size: 14px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px){
+  .container{
+    .review-box-list{
+    
+      .review-box{
+        grid-template-columns: repeat(1,50%);
+        justify-content: center;
+
+        .red-card:nth-of-type(2){
+          display: none;
+        }
+        .red-card{
+          .review-card{
+            .review-item-box{
+
+              .item-top{
+                
+                .review-text{
+                  max-width: 160px;
+                  font-size: 12px;
+                }
+              }
+              .item-bottom{
+                .product-name{
+                  max-width: 160px;
+                  font-size: 12px;
+                }
+                .rating-box{
+                  span{
+                    font-size: 12px;
+                  }
+                  .stars{
+                    .star-icon{
+                      width: 12px;
+                      height: 12px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

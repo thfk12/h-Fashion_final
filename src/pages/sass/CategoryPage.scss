@@ -1,0 +1,21 @@
+@use '../../App.scss' as g;
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 2rem;
+    margin: 0 auto;
+    max-width: 1720px;
+    width: 100%;
+    >h2{
+      margin-top: 4rem;
+    }
+}
+.category-page-title {
+  color: g.$main-color1;
+  text-align: center;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+}

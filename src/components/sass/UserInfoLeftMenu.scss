@@ -1,0 +1,38 @@
+@use "../../App.scss" as g;
+
+.menu-list-wrap{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3rem;
+
+  h2{
+    font-size: 4rem;
+	  font-style: normal;
+	  font-weight: 400;
+    width: 100%;
+  }
+
+  .menu-list{
+
+    button{
+      font-size: 1.6rem;
+      font-weight: bold;
+      padding: 0 10px 2rem;
+      color: g.$sub-color5;
+    }
+
+    ul{
+      display: flex;
+      padding: 0 2rem;
+      flex-direction: column;
+      gap: 2rem;
+
+      li{
+        font-size: 1.4rem;
+        color: g.$sub-color4;
+      }
+    }
+  }
+}

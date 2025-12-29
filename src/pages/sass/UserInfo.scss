@@ -1,0 +1,110 @@
+@use "../../App.scss" as g;
+
+.content-inner {
+  &.userinfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5rem 2rem;
+
+    .user-info-left {
+      width: 15%;
+    }
+
+    .user-info-main-right {
+      width: 80%;
+      border: 1px solid g.$sub-color2;
+      display: flex;
+      flex-direction: column;
+      gap: 6rem;
+      padding: 5rem 3rem;
+      min-width: 900px;
+
+      .profile-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .username {
+          font-size: 2.6rem;
+        }
+
+        .info-summary {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 2rem;
+
+          .summary-box {
+            background: g.$main-color1;
+            padding: 20px;
+            color: g.$main-color2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 140px;
+
+            .box-label {
+              font-size: 1.6rem;
+              color: g.$main-color2;
+            }
+
+            .box-value {
+              font-size: 2.8rem;
+              font-weight: 500;
+              text-align: right;
+            }
+          }
+        }
+      }
+
+      .recent-orders-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        .recent-orders-top {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+
+          .section-title {
+            font-size: 2.4rem;
+            font-weight: 500;
+          }
+
+          .order-list {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid g.$sub-color2;
+
+            li {
+            }
+          }
+        }
+
+        .order-button-box {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: g.$main-color2;
+          gap: 3rem;
+
+          button {
+            font-size: 1.4rem;
+            text-decoration: underline;
+            background: none;
+            border: none;
+            cursor: pointer;
+          }
+
+          p {
+            color: #bababa;
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@use '../../App.scss' as g;
+
+.main-content {
+  margin: 130px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22rem;
+  font-size: 1.6rem;
+  overflow: hidden;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    h2 {
+      color: g.$main-color1;
+      text-align: center;
+      font-family: 'Times New Roman';
+      font-size: 5.4rem;
+      font-weight: 400;
+    }
+
+    .container {
+      min-height: 200px;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@use "../../App.scss" as g;
+
+.sub-page {
+  margin: 0 auto;
+  min-width: 1024px;
+  max-width: 1720px;
+  .inner {
+    &.cart {
+      display: flex;
+      flex-direction: column;
+      padding: 4rem 20px 0;
+
+      .cart-inner-content {
+        display: flex;
+      }
+
+      .cart-inner-top {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .cart-inner-title {
+          .sub-page-title {
+            color: g.$main-color1;
+            font-size: 4rem;
+            font-weight: 500;
+          }
+        }
+        .cart-inner-content {
+          display: flex;
+          justify-content: space-between;
+
+          .cart-inner-left {
+            border: 1px solid g.$sub-color2;
+            width: 70%;
+            padding: 4rem;
+          }
+
+          .cart-inner-right {
+            border: 1px solid g.$sub-color2;
+            width: 25%;
+            height: 30%;
+            padding: 4rem;
+          }
+        }
+      }
+
+      .cart-inner-bottom {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}

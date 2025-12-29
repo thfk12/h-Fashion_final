@@ -1,0 +1,208 @@
+@use "../../App.scss" as g;
+
+.cart-op-change-wrap {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  font-size: 1.6rem;
+  line-height: 1.6;
+
+  .cart-op-popup {
+    // width: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.6rem;
+
+    .op-popup-title {
+
+      h2 {
+        font-size: 2rem;
+        font-weight: 400;
+      }
+    }
+
+    .op-popup-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+
+      .op-popup-content {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        .op-popup-middle {
+          display: flex;
+          flex-direction: column;
+          gap: 1.4rem;
+
+          .op-size-change {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+
+            p {
+              color: g.$sub-color4;
+              font-size: 1.4rem;
+            }
+
+            ul {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 4px;
+
+              li {
+
+                button {
+                  width: 4rem;
+                  height: 3.2rem;
+                  line-height: 2.4rem;
+                  color: g.$sub-color4;
+                  border: 1px solid g.$sub-color4;
+                  border-radius: 2px;
+                  background: g.$main-color2;
+                  font-size: 1.2rem;
+
+                  &:disabled {
+                    background: g.$sub-color1;
+                    text-decoration: line-through;
+                  }
+
+                  &.active {
+                    color: g.$main-color2;
+                    background: g.$main-color1;
+                    border-color: g.$main-color1;
+                  }
+                }
+              }
+            }
+          }
+
+          .op-color-change {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+
+            p {
+              color: g.$sub-color4;
+              font-size: 1.4rem;
+            }
+
+            .color-option {
+              display: flex;
+              gap: 2rem;
+
+              button {
+                border-radius: 50%;
+                width: 3rem;
+                height: 3rem;
+
+                &.active {
+                  background-image: url('../../../public/images/icon/icon-color-check.png');
+                  background-repeat: no-repeat;
+                  background-position: center;
+                }
+
+                &.active.white {
+                  background-image: url('../../../public/images/icon/icon-color-check-white.png');
+                }
+
+                &.pink {
+                  background-color: pink;
+                }
+
+                &.sky {
+                  background-color: skyblue;
+                }
+
+                &.white {
+                  background-color: white;
+                  border: 1px solid g.$sub-color3;
+                }
+
+                &.black {
+                  background-color: black;
+                }
+              }
+            }
+          }
+        }
+
+        .op-popup-bottom {
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: space-between;
+
+          .op-change-price {
+
+            span {
+              font-size: 1.4rem;
+              color: g.$sub-color4;
+            }
+
+            .price {
+              font-size: 1.6rem;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+
+      .op-popup-button-wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+    }
+  }
+}
+
+
+
+
+
+.op-count-change {
+  @include g.myFlex($gap: 0, $jc: flex-start);
+
+  button,
+  span {
+    text-align: center;
+    display: inline-block;
+    height: 28px;
+    background-color: g.$main-color2;
+    border: 1px solid g.$sub-color2;
+    line-height: 28px;
+  }
+
+  button {
+    width: 28px;
+
+    &.minus {
+      background-image: url("../../../public/images/icon/icon-minus.png");
+    }
+
+    &.plus {
+      background-image: url("../../../public/images/icon/icon-plus.png");
+    }
+
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  span {
+    border-left: none;
+    border-right: none;
+    width: 40px;
+  }
+}

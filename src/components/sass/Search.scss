@@ -1,0 +1,27 @@
+@use '../../App.scss' as g;
+
+.search-page {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+.search-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.sub-goods-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.no-result {
+  margin-top: 40px;
+  font-size: 1.8rem;
+  color: g.$main-color1;
+  text-align: center;
+}
