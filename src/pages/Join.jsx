@@ -16,7 +16,7 @@ const Join = () => {
     address: '',
     address2: '',
   });
-  const [passwordMatch, setPasswordMatch] = useState(false);
+  const [passwordMatch, setPasswordMatch] = useState(null);
   const [passwordTouched, setPasswordTouched] = useState(false);
   const { onMember } = useAuthStore();
   const [isPostcodeOpen, setIsPostcodeOpen] = useState(false);
@@ -64,7 +64,7 @@ const Join = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (FormDataEvent.password !== formData.passwordCheck) {
+    if (formData.password.trim() !== formData.passwordCheck.trim()) {
       alert("비밀번호가 일치하지 않습니다.");
       return;
     }
