@@ -61,11 +61,21 @@ const Join = () => {
     setRememberAddress(fullAddress);
     setIsPostcodeOpen(false);
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onMember(formData);
-    alert('회원가입을 성공적으로 완료했습니다');
-    navigate('/');
+
+    if (FormDataEvent.password !== formData.passwordCheck) {
+      alert("비밀번호가 일치하지 않습니다.");
+      return;
+    }
+
+    try {
+      await onMember(formData);
+      alert("회원가입을 성공적으로 완료했습니다.");
+      navigate("/");
+    } catch (err) {
+      alert("회원가입에 실패했습니다.");
+    }
   };
   const handleIdCheck = (e) => {
     alert('사용 가능한아아디입니다.');

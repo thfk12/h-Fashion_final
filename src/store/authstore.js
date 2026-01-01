@@ -13,30 +13,76 @@ import { doc, getDoc, setDoc } from 'firebase/firestore';
 export const useAuthStore = create((set) => ({
   user: null,
   items: [],
-  onMember: async ({ id, displayName, email, password, phone, address, address2 }) => {
-    try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
+  // onMember: async ({ id, displayName, email, password, phone, address, address2, formData }) => {
+  //   try {
+  //     const email = formData.email.trim();
+  //     const password = formData.password.trim();
 
+  //     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+  //     const user = userCredential.user;
+
+  //     await updateProfile(user, { displayName });
+
+  //     await setDoc(doc(db, 'users', user.uid), {
+  //       id,
+  //       displayName,
+  //       email,
+  //       phone,
+  //       address,
+  //       address2,
+  //     });
+
+  //     set({
+  //       user: { id, displayName, email, phone, address, address2 },
+  //     });
+  //     alert('회원가입 성공');
+  //   } catch (err) {
+  //     alert(err.message);
+  //   }
+  // },
+  onMember: async (formData) => {
+  try {
+    const {
+      id,
+      displayName,
+      email,
+      password,
+      phone,
+      address,
+      address2,
+    } = formData;
+
+    const e = (email || "").trim();
+    const p = (password || "").trim();
+
+    const userCredential = await createUserWithEmailAndPassword(auth, e, p);
+    const user = userCredential.user;
+
+    // displayName 설정(선택)
+    if (displayName) {
       await updateProfile(user, { displayName });
-
-      await setDoc(doc(db, 'users', user.uid), {
-        id,
-        displayName,
-        email,
-        phone,
-        address,
-        address2,
-      });
-
-      set({
-        user: { id, displayName, email, phone, address, address2 },
-      });
-      alert('회원가입 성공');
-    } catch (err) {
-      alert(err.message);
     }
-  },
+
+    await setDoc(doc(db, "users", user.uid), {
+      id,
+      displayName,
+      email: e,
+      phone,
+      address,
+      address2,
+    });
+
+    set({
+      user: { id, displayName, email: e, phone, address, address2 },
+    });
+
+    return user; // ✅ 성공 반환
+  } catch (err) {
+    console.error(err);
+    throw err; // ✅ 실패를 Join에서 잡게 throw
+  }
+},
+
 
   nonCart: {
     items: [],
