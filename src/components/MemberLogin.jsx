@@ -27,11 +27,15 @@ const MemberLogin = () => {
   const { onKakaoLogin } = useAuthStore();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (rememberId) {
-      localStorage.setItem('savedEmail', email);
-    }
-    await onLogin(email, password);
-    navigate('/');
+    try {
+    if (rememberId) localStorage.setItem("savedEmail", email);
+    await onLogin(email, password);   // ✅ 실패하면 throw 되게(위 1번)
+    navigate("/");                    // ✅ 성공했을 때만 이동
+  } catch (err) {
+    // 여기서 에러 메시지 UI로 보여주면 좋음
+    console.log(err);
+    alert(err?.code || err?.message || "로그인 실패");
+  }
   };
   const handleGoogleLogin = async (e) => {
     await onGoogleLogin();

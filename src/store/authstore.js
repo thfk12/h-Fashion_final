@@ -174,7 +174,9 @@ export const useAuthStore = create((set) => ({
 
       alert('로그인 성공!');
     } catch (err) {
-      alert(err.message);
+      // alert(err.message);
+      console.log("LOGIN ERROR:", err?.code, err?.message);
+      throw err;
     }
   },
 
