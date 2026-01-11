@@ -39,12 +39,6 @@ const Login = () => {
               지금 회원가입하러 가기
             </Link>
           </div>
-          <div>
-            <h1>이메일 : aaaa@gmail.com</h1>
-            <h1>비밀번호 : zhddl0815</h1>
-            <h1>이메일 : abc@naver.com</h1>
-            <h1>비밀번호 : qwer1234</h1>
-          </div>
         </div>
       </div>
     </div>
