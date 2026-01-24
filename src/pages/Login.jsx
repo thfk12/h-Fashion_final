@@ -40,9 +40,9 @@ const Login = () => {
             </Link>
           </div>
         </div>
-        <div>
-          <p>아이디: asdf</p>
-          <p>비밀번호: asdfgh</p>
+        <div className='idpassword-box'>
+          <p className='id-box'>아이디: asdf@ghjk.com</p>
+          <p className='password-box'>비밀번호: asdfgh</p>
         </div>
       </div>
     </div>
