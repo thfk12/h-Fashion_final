@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './sass/SearchOverlay.scss';
 import { useProductStore } from '../store/useProductStore.js';
@@ -19,6 +19,7 @@ const SearchOverlay = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
   const store = useProductStore();
   const products = store.items || [];
+  const safeProducts = useMemo(() => products ?? [], [products]);
 
   const [keyword, setKeyword] = useState('');
   const [filteredItems, setFilteredItems] = useState([]);
@@ -40,8 +41,8 @@ const SearchOverlay = ({ isOpen, onClose }) => {
   }, [store]);
 
   useEffect(() => {
-    if (keyword.trim() && products.length > 0) {
-      const filtered = products
+    if (keyword.trim() && safeProducts.length > 0) {
+      const filtered = safeProducts
         .filter((item) => (item.title || '').toLowerCase().includes(keyword.toLowerCase()))
         .slice(0, 12);
       setFilteredItems(filtered);
@@ -50,7 +51,7 @@ const SearchOverlay = ({ isOpen, onClose }) => {
       setFilteredItems([]);
       setActiveIndex(-1);
     }
-  }, [keyword, products]);
+  }, [keyword, safeProducts]);
 
   if (!isOpen) return null;
 

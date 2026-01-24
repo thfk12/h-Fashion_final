@@ -9,7 +9,7 @@ export const usePickStore = create(
       onAddWishList: (item) => {
         const pick = get().pickLists;
 
-        const exisiting = pick.find((p) => p.code == item.code);
+        const exisiting = pick.find((p) => p.code === item.code);
 
         let updatePick;
         if (exisiting) {

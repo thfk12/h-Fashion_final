@@ -18,7 +18,7 @@ const NonMember = () => {
   const [isPostcodeOpen, setIsPostcodeOpen] = useState(false);
   const [rememberAddress, setRememberAddress] = useState('');
 
-  const [isRequestOpen, setIsRequestOpen] = useState(false);
+  const [setIsRequestOpen] = useState(false);
   const requestBoxRef = useRef(null);
 
   const handleComplete = (data) => {
