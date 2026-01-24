@@ -49,7 +49,7 @@ import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import NonMember from "./pages/NonMember";
 import ProductDetail from "./pages/ProductDetail";
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import { useProductStore } from "./store/useProductStore";
 import MainBrandLive from "./components/MainBrandLive";
 import { useAuthStore } from "./store/authstore";
@@ -62,13 +62,12 @@ import MemberDelivery from "./pages/MemberDelivery";
 
 function App() {
   const onFetchItem = useProductStore((state) => state.onFetchItem);
+
   useEffect(() => {
     onFetchItem();
   }, [onFetchItem]);
 
-  const initAuth = useCallback(() => {
-    useAuthStore((state) => state.initAuth)
-  },[useAuthStore]);
+  const initAuth = useAuthStore((state) => state.initAuth);
 
   useEffect(() => {
     initAuth();
@@ -120,7 +119,7 @@ function App() {
           <Route path="brand-tommy" element={<BrandTommy />} />
         </Route>
 
-        <Route path="/brand" element={<Brand />}></Route>
+        <Route path="/brand" element={<Brand />} />
 
         <Route path="*" element={<NotFound />} />
 

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useMemo } from 'react';
+import { useRef, useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './sass/SearchOverlay.scss';
 import { useProductStore } from '../store/useProductStore.js';
@@ -17,12 +17,14 @@ const popularKeywords = [
 
 const SearchOverlay = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
-  const store = useProductStore();
-  const products = store.items || [];
-  const safeProducts = useMemo(() => {
-    const safe = products ?? [];
-    return safe;
-  },[products]);
+  // const store = useProductStore();
+  // const products = store.items || [];
+  // const safeProducts = useMemo(() => {
+  //   const safe = products ?? [];
+  //   return safe;
+  // },[products]);
+  const items = useProductStore((state) => state.items);
+  const onFetchItem = useProductStore((state) => state.onFetchItem);
 
   const [keyword, setKeyword] = useState('');
   const [filteredItems, setFilteredItems] = useState([]);
@@ -38,23 +40,37 @@ const SearchOverlay = ({ isOpen, onClose }) => {
   }, [isOpen]);
 
   useEffect(() => {
-    if (store.items.length === 0) {
-      store.onFetchItem();
+    if (items.length === 0) {
+      onFetchItem();
     }
-  }, [store]);
+  }, [items.length, onFetchItem]);
 
+  const filteredByKeyword = useMemo(() => {
+    if (!keyword.trim()) return [];
+
+    const safeItems = items ?? [];
+
+    return safeItems
+      .filter((item) => (item.title || "").toLowerCase().includes(keyword.toLowerCase()))
+      .slice(0, 12);
+  }, [items, keyword]);
+
+  // useEffect(() => {
+  //   if (keyword.trim() && safeProducts.length > 0) {
+  //     const filtered = safeProducts
+  //       .filter((item) => (item.title || '').toLowerCase().includes(keyword.toLowerCase()))
+  //       .slice(0, 12);
+  //     setFilteredItems(filtered);
+  //     setActiveIndex(-1);
+  //   } else {
+  //     setFilteredItems([]);
+  //     setActiveIndex(-1);
+  //   }
+  // }, [keyword, safeProducts]);
   useEffect(() => {
-    if (keyword.trim() && safeProducts.length > 0) {
-      const filtered = safeProducts
-        .filter((item) => (item.title || '').toLowerCase().includes(keyword.toLowerCase()))
-        .slice(0, 12);
-      setFilteredItems(filtered);
-      setActiveIndex(-1);
-    } else {
-      setFilteredItems([]);
-      setActiveIndex(-1);
-    }
-  }, [keyword, safeProducts]);
+    setFilteredItems(filteredByKeyword);
+    setActiveIndex(-1);
+  }, [filteredByKeyword]);
 
   if (!isOpen) return null;
 
@@ -115,17 +131,24 @@ const SearchOverlay = ({ isOpen, onClose }) => {
   const highlightText = (text, keyword) => {
     if (!keyword) return text;
     const regex = new RegExp(`(${keyword})`, 'gi');
-    const parts = text.split(regex);
+    // const parts = text.split(regex);
+    return text.split(regex).map((part, i) => part.toLowerCase() === keyword.toLowerCase() ? (
+      <mark key={i} style={{color:"#eebe81"}}>
+        {part}
+      </mark>
+    ) : (
+      <span key={i}>{part}</span>
+    ))
 
-    return parts.map((part, i) =>
-      part.toLowerCase() === keyword.toLowerCase() ? (
-        <mark key={i} style={{ color: '#EEBE81' }}>
-          {part}
-        </mark>
-      ) : (
-        <span key={i}>{part}</span>
-      )
-    );
+    // return parts.map((part, i) =>
+    //   part.toLowerCase() === keyword.toLowerCase() ? (
+    //     <mark key={i} style={{ color: '#EEBE81' }}>
+    //       {part}
+    //     </mark>
+    //   ) : (
+    //     <span key={i}>{part}</span>
+    //   )
+    // );
   };
 
   return (

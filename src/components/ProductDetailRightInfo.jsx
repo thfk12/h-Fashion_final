@@ -85,7 +85,10 @@ const ProductDetailRightInfo = ({ product, onOpenPopup, onOpenPay }) => {
       }
     }
   };
-  const { items, onFetchItem } = useProductStore();
+  // const { items, onFetchItem } = useProductStore();
+  const items = useProductStore((state) => state.items);
+  const onFetchItem = useProductStore((state) => state.onFetchItem);
+
   const { onAddWishList, pickLists } = usePickStore();
   const { onAddToCart, cartItems } = useCartStore();
   const { user } = useAuthStore();
@@ -99,19 +102,23 @@ const ProductDetailRightInfo = ({ product, onOpenPopup, onOpenPay }) => {
   );
 
   useEffect(() => {
-    if (items.length === 0) {
-      onFetchItem();
-    }
     setSelectSize("");
     setSelectColor("");
     setCount(1);
   }, [code]);
 
   useEffect(() => {
-    if (!code || items.length === 0) return;
+    if (items.length === 0){
+      onFetchItem();
+    }
+  }, [items.length, onFetchItem]);
+
+  useEffect(() => {
+    if(!code || items.length === 0) return;
     const findItem = items.find((it) => it.code === code);
     setItem(findItem);
   }, [code, items]);
+
   const handleAddToCart = () => {
     if (!selectColor) {
       alert("색상을 선택해주세요");

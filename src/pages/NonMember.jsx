@@ -18,13 +18,9 @@ const NonMember = () => {
   const [isPostcodeOpen, setIsPostcodeOpen] = useState(false);
   const [rememberAddress, setRememberAddress] = useState('');
 
-  const [setIsRequestOpen] = useState(false);
+  const [, setIsRequestOpen] = useState(false);
   const requestBoxRef = useRef(null);
 
-  useEffect(() => {
-    setIsRequestOpen(false);
-  }, [setIsRequestOpen]);
-  
   const handleComplete = (data) => {
     const fullAddress = data.address;
     setRememberAddress(fullAddress);
