@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import BrandLiveProducts from './BrandLiveProducts';
 import './sass/brandlive.scss';
 
@@ -128,7 +128,7 @@ const MainBrandLive = () => {
     setActiveIndex(index);
   };
 
-  const mainNew = brandData.map((group) => group.find((v) => v.id === 1).thumbImg);
+  // const mainNew = brandData.map((group) => group.find((v) => v.id === 1).thumbImg);
 
   return (
     <section className="brand-live-section">

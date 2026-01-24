@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useCartStore } from '../store/useCartStore';
 import './sass/CartOpChangePopup.scss';
 
@@ -74,9 +74,9 @@ const CartOpChangePopup = ({ product, onClose, item }) => {
 
   const { updateCartOptions } = useCartStore();
 
-  const handleItemSize = (size) => {
-    setSelectSize(size);
-  };
+  // const handleItemSize = (size) => {
+  //   setSelectSize(size);
+  // };
 
   const handleUpdate = () => {
     updateCartOptions(item.code, selectSize, selectColor, count);

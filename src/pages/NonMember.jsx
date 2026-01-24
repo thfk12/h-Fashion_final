@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './sass/NonMember.scss';
 import PayItem from '../components/PayItem';
 import NonCartPo from '../components/NonCartPo';
@@ -21,6 +21,10 @@ const NonMember = () => {
   const [setIsRequestOpen] = useState(false);
   const requestBoxRef = useRef(null);
 
+  useEffect(() => {
+    setIsRequestOpen(false);
+  }, [setIsRequestOpen]);
+  
   const handleComplete = (data) => {
     const fullAddress = data.address;
     setRememberAddress(fullAddress);

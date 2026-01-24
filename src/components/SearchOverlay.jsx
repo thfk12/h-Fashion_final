@@ -19,7 +19,10 @@ const SearchOverlay = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
   const store = useProductStore();
   const products = store.items || [];
-  const safeProducts = useMemo(() => products ?? [], [products]);
+  const safeProducts = useMemo(() => {
+    const safe = products ?? [];
+    return safe;
+  },[products]);
 
   const [keyword, setKeyword] = useState('');
   const [filteredItems, setFilteredItems] = useState([]);

@@ -87,7 +87,7 @@ const ProductDetailRightInfo = ({ product, onOpenPopup, onOpenPay }) => {
   };
   const { items, onFetchItem } = useProductStore();
   const { onAddWishList, pickLists } = usePickStore();
-  const { onAddToCart, cartItems, opChangeCartItems } = useCartStore();
+  const { onAddToCart, cartItems } = useCartStore();
   const { user } = useAuthStore();
   const [item, setItem] = useState("");
   const [selectSize, setSelectSize] = useState("");

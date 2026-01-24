@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCartStore } from '../store/useCartStore';
 import { usePayStore } from '../store/usePayStore';
@@ -6,7 +5,7 @@ import './sass/PayResultPopup.scss';
 
 const PayResultPopup = ({ onClose }) => {
   const { checkedTotalPrice, cartItems, onRemoveChecked } = useCartStore();
-  const { today, orders, addOrder } = usePayStore();
+  const { today, orders } = usePayStore();
   const navigate = useNavigate();
 
   const filteredCart = cartItems.filter((c) => c.checked);

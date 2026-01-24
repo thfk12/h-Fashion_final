@@ -49,7 +49,7 @@ import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import NonMember from "./pages/NonMember";
 import ProductDetail from "./pages/ProductDetail";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useProductStore } from "./store/useProductStore";
 import MainBrandLive from "./components/MainBrandLive";
 import { useAuthStore } from "./store/authstore";
@@ -66,10 +66,13 @@ function App() {
     onFetchItem();
   }, [onFetchItem]);
 
-  const initAuth = useAuthStore((state) => state.initAuth);
+  const initAuth = useCallback(() => {
+    useAuthStore((state) => state.initAuth)
+  },[useAuthStore]);
+
   useEffect(() => {
     initAuth();
-  }, []);
+  }, [initAuth]);
 
   return (
     <div className="App">
